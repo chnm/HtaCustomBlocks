@@ -1,9 +1,9 @@
 <?php
 namespace HtaCustomBlocks\Controller\Admin;
 
-use Zend\Mvc\Controller\AbstractActionController;
-use Zend\View\Model\ViewModel;
-use Zend\Form\Form;
+use Laminas\Mvc\Controller\AbstractActionController;
+use Laminas\View\Model\ViewModel;
+use Laminas\Form\Form;
 
 class PartialController extends AbstractActionController
 {

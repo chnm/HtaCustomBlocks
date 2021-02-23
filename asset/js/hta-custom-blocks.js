@@ -1,6 +1,7 @@
 (function ($) {
     $(document).ready(function() {
         $('#blocks').on('click', '.page-add', function() {
+            Omeka.closeSidebar($('.sidebar.active:not(#new-block)'));
             var sidebar = $('#page-list');
             var pageList = $('#page-list .pages');
             var optionTemplate = $('#page-list .option.template');
@@ -37,6 +38,7 @@
             var sidebar = $('#page-options');
             var currentPage = $(this).closest('.attachment');
             var mediaInput = currentPage.find('input.media');
+            $('.configuring-page').removeClass('configuring-page');
             currentPage.addClass('configuring-page');
             if (mediaInput.val() !== '') {
               $('[name="o:thumbnail[o:id]"]').val(mediaInput.val());
@@ -69,6 +71,14 @@
             currentPage.find('input.description').val($('#page-options [name="description"]').val());
             Omeka.closeSidebar(pageOptionsSidebar);
             currentPage.removeClass('configuring-page');
+        });
+        
+        $('body').on('o:sidebar-opened', '.sidebar', function () {
+          var sidebarId = $(this).attr('id');
+          if (sidebarId !== 'page-options' && sidebarId !== 'page-list') {
+            Omeka.closeSidebar($('#page-options.active'));
+            Omeka.closeSidebar($('#page-list.active'));
+          }
         });
 
         $.get('../../../../../admin/hta/page-sidebar', function(data) {

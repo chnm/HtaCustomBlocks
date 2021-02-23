@@ -3,9 +3,9 @@
 namespace HtaCustomBlocks;
 
 use Omeka\Module\AbstractModule;
-use Zend\EventManager\Event;
-use Zend\Mvc\MvcEvent;
-use Zend\EventManager\SharedEventManagerInterface;
+use Laminas\EventManager\Event;
+use Laminas\Mvc\MvcEvent;
+use Laminas\EventManager\SharedEventManagerInterface;
 
 class Module extends AbstractModule
 {

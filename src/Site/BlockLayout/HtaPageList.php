@@ -7,8 +7,8 @@ use Omeka\Api\Representation\SitePageBlockRepresentation;
 use Omeka\Site\BlockLayout\AbstractBlockLayout;
 use Omeka\Entity\SitePageBlock;
 use Omeka\Stdlib\ErrorStore;
-use Zend\Form\Element\Hidden;
-use Zend\View\Renderer\PhpRenderer;
+use Laminas\Form\Element\Hidden;
+use Laminas\View\Renderer\PhpRenderer;
 
 class HtaPageList extends AbstractBlockLayout
 {

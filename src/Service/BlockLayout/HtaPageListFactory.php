@@ -3,7 +3,7 @@ namespace HtaCustomBlocks\Service\BlockLayout;
 
 use Interop\Container\ContainerInterface;
 use HtaCustomBlocks\Site\BlockLayout\HtaPageList;
-use Zend\ServiceManager\Factory\FactoryInterface;
+use Laminas\ServiceManager\Factory\FactoryInterface;
 
 class HtaPageListFactory implements FactoryInterface
 {
