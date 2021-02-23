@@ -75,7 +75,7 @@
         
         $('body').on('o:sidebar-opened', '.sidebar', function () {
           var sidebarId = $(this).attr('id');
-          if (sidebarId !== 'page-options' && sidebarId !== 'page-list') {
+          if (sidebarId !== 'page-options' && sidebarId !== 'page-list' && sidebarId !== 'asset-upload-label') {
             Omeka.closeSidebar($('#page-options.active'));
             Omeka.closeSidebar($('#page-list.active'));
           }
