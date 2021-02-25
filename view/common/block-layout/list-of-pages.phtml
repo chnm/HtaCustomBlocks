@@ -13,6 +13,7 @@ $attachmentRowTemplate = '
     <input type="hidden" class="page" name="o:block[__blockIndex__][o:data][__attachmentIndex__][site_page][label]">
     <input type="hidden" class="url" name="o:block[__blockIndex__][o:data][__attachmentIndex__][site_page][url]">
     <input type="hidden" class="media" name="o:block[__blockIndex__][o:data][__attachmentIndex__][site_page][media]">
+    <input type="hidden" class="alt-label" name="o:block[__blockIndex__][o:data][__attachmentIndex__][site_page][alt_label]">
     <input type="hidden" class="home-heading" name="o:block[__blockIndex__][o:data][__attachmentIndex__][site_page][home_heading]">
     <input type="hidden" class="description" name="o:block[__blockIndex__][o:data][__attachmentIndex__][site_page][description]">
     ';
@@ -40,6 +41,7 @@ $attachmentRowTemplate = '
             <input type="hidden" class="page" name="o:block[__blockIndex__][o:data][__attachmentIndex__][site_page][label]" value="<?php echo $page['site_page']['label']; ?>">
             <input type="hidden" class="url" name="o:block[__blockIndex__][o:data][__attachmentIndex__][site_page][url]" value="<?php echo $page['site_page']['url']; ?>">
             <input type="hidden" class="media" name="o:block[__blockIndex__][o:data][__attachmentIndex__][site_page][media]" value="<?php echo $mediaId; ?>">
+            <input type="hidden" class="alt-label" name="o:block[__blockIndex__][o:data][__attachmentIndex__][site_page][alt_label]" value="<?php echo (isset($page['site_page']['alt_label'])) ? $page['site_page']['alt_label'] : ''; ?>">
             <input type="hidden" class="home-heading" name="o:block[__blockIndex__][o:data][__attachmentIndex__][site_page][home_heading]" value="<?php echo $page['site_page']['home_heading']; ?>">
             <input type="hidden" class="description" name="o:block[__blockIndex__][o:data][__attachmentIndex__][site_page][description]" value="<?php echo $page['site_page']['description']; ?>">
           </div>

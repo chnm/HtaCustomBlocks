@@ -49,6 +49,7 @@
             } else {
               $('.selected-asset').hide();
             }
+            $('#page-options [name="alt_label"]').val(currentPage.find('input.alt-label').val());
             $('#page-options [name="home_heading"]').val(currentPage.find('input.home-heading').val());
             $('#page-options [name="description"]').val(currentPage.find('input.description').val());
             Omeka.openSidebar(sidebar);
@@ -62,11 +63,12 @@
             var selectedMediaAssetImage = $('.selected-asset-image');
             var selectedMediaAssetImageUrl = selectedMediaAssetImage.attr('src');
             mediaInput.val(selectedMediaInput.val());
-            if (currentPage.find('img').length == 0) {
+            if ((currentPage.find('img').length == 0) && (selectedMediaAssetImageUrl !== undefined)) {
               currentPage.find('.thumbnail').prepend($('<img>', {src: selectedMediaAssetImageUrl}));
             } else {
               currentPage.find('img').attr('src', selectedMediaAssetImageUrl);
             }
+            currentPage.find('input.alt-label').val($('#page-options [name="alt_label"]').val());
             currentPage.find('input.home-heading').val($('#page-options [name="home_heading"]').val());
             currentPage.find('input.description').val($('#page-options [name="description"]').val());
             Omeka.closeSidebar(pageOptionsSidebar);
@@ -75,7 +77,7 @@
         
         $('body').on('o:sidebar-opened', '.sidebar', function () {
           var sidebarId = $(this).attr('id');
-          if (sidebarId !== 'page-options' && sidebarId !== 'page-list' && sidebarId !== 'asset-upload-label') {
+          if (sidebarId !== 'page-options' && sidebarId !== 'page-list' && sidebarId !== 'asset-sidebar') {
             Omeka.closeSidebar($('#page-options.active'));
             Omeka.closeSidebar($('#page-list.active'));
           }

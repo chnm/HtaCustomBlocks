@@ -22,6 +22,10 @@ class PartialController extends AbstractActionController
         'type' => 'Omeka\Form\Element\Asset',
       ]);
       $form->add([
+        'name' => 'alt_label',
+        'type' => 'Text',
+      ]);
+      $form->add([
         'name' => 'home_heading',
         'type' => 'Text',
       ]);

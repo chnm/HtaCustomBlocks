@@ -2,6 +2,7 @@
 $translate = $this->plugin('translate');
 $escape = $this->plugin('escapeHtml');
 $mediaInput = $form->get('o:thumbnail[o:id]');
+$altLabelInput = $form->get('alt_label');
 $headingInput = $form->get('home_heading');
 $descriptionInput = $form->get('description');
 $form->prepare();
@@ -11,6 +12,10 @@ $form->prepare();
   <div class="sidebar-content">
     <h3><?php echo $translate('Page Options'); ?></h3>
     <?php echo $this->formRow($mediaInput); ?>
+    <div class="alt-label">
+      <h3><?php echo $translate('Alternative Link Label'); ?></h3>
+      <?php echo $this->formRow($altLabelInput); ?>
+    </div>
     <div class="home-heading">
       <h3><?php echo $translate('Home Heading'); ?></h3>
       <?php echo $this->formRow($headingInput); ?>

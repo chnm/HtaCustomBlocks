@@ -10,7 +10,14 @@
         <?php if ($mediaId !== ''): ?>
         <img src="<?php echo $assets[$mediaId]->assetUrl(); ?>">
         <?php endif; ?>
-        <span class="page-link-label"><?php echo $page['site_page']['label']; ?></span>
+        <span class="page-link-label">
+        <?php $altLabel = $page['site_page']['alt_label']; ?>
+        <?php if (isset($altLabel) && $altLabel !== ''): ?>
+        <?php echo $altLabel; ?>
+        <?php else: ?>
+        <?php echo $page['site_page']['label']; ?>
+        <?php endif; ?>
+        </span>
       </a>
       <?php if ($page['site_page']['description'] !== ''): ?>
       <span class="description"><?php echo $page['site_page']['description']; ?></span>
